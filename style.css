@@ -10,6 +10,7 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --font-heading: 'Syne', sans-serif;
     --font-body: 'Inter', sans-serif;
+    --webkit-scrollbar-thumb: none;
 }
 
 * {
