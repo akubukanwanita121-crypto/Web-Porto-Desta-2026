@@ -22,26 +22,29 @@
 
     <!-- Sticky Navigation -->
     <nav class="navbar">
-        <div class="nav-content">
-            <a href="#" class="brand-logo">C<span>.</span></a>
-            <div class="nav-controls">
-    <button id="soundToggle" class="sound-btn custom-hover" aria-label="Toggle Sound">
-        <span class="sound-icon">🎵</span> <span class="sound-text">Sound OFF</span>
-    </button>
-</div>
+    <div class="nav-content">
+        <a href="#" class="brand-logo">C<span>.</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-<!-- Audio Tag (Gunakan path folder lokal) -->
-<audio id="bgMusic" loop preload="auto">
-    <source src="audio/bgm.mp3" type="audio/mpeg">
-</audio>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="nav-controls">
+            <button id="soundToggle" class="sound-btn custom-hover" aria-label="Toggle Sound">
+                <span class="sound-icon">🎵</span> <span class="sound-text">Sound OFF</span>
+            </button>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<!-- Audio Tag (Ditaruh bersih di luar navbar) -->
+<audio id="bgMusic" loop preload="auto">
+    <!-- TIPS: Ubah nama file lagu kamu di folder menjadi All-of-Me.mp3 (tanpa spasi) -->
+    <source src="./laguw.mp3" type="audio/mpeg">
+</audio>
 
     <!-- Hero Section -->
     <section id="home" class="hero">

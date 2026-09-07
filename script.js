@@ -157,31 +157,50 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Audio Background Logic ---
 const bgMusic = document.getElementById('bgMusic');
 const soundToggle = document.getElementById('soundToggle');
-const soundText = soundToggle.querySelector('.sound-text');
+const soundText = soundToggle ? soundToggle.querySelector('.sound-text') : null;
 let isPlaying = false;
 
-function toggleAudio() {
+function playAudio() {
+    if (!bgMusic) return;
+    bgMusic.play().then(() => {
+        if (soundText) soundText.textContent = 'Sound ON';
+        if (soundToggle) soundToggle.classList.add('playing');
+        isPlaying = true;
+    }).catch(err => {
+        console.log("Autoplay terhalang oleh browser atau file tidak ditemukan:", err);
+    });
+}
+
+function pauseAudio() {
+    if (!bgMusic) return;
+    bgMusic.pause();
+    if (soundText) soundText.textContent = 'Sound OFF';
+    if (soundToggle) soundToggle.classList.remove('playing');
+    isPlaying = false;
+}
+
+function toggleAudio(e) {
+    if (e) e.stopPropagation(); // Mencegah event berbenturan dengan klik window
     if (isPlaying) {
-        bgMusic.pause();
-        soundText.textContent = 'Sound OFF';
-        soundToggle.classList.remove('playing');
-        isPlaying = false;
+        pauseAudio();
     } else {
-        bgMusic.play().then(() => {
-            soundText.textContent = 'Sound ON';
-            soundToggle.classList.add('playing');
-            isPlaying = true;
-        }).catch(err => console.log("Autoplay blocked:", err));
+        playAudio();
     }
 }
 
-// Klik tombol sound toggle
-soundToggle.addEventListener('click', toggleAudio);
+if (soundToggle) {
+    soundToggle.addEventListener('click', toggleAudio);
+}
 
-// Trik Awwwards: Putar otomatis saat pengguna pertama kali mengklik apa saja di layar
-window.addEventListener('click', () => {
+// Trik Autoplay saat pengguna pertama kali berinteraksi (klik/ketik) di halaman
+const enableAutoplayOnFirstInteraction = () => {
     if (!isPlaying) {
-        toggleAudio();
+        playAudio();
     }
-}, { once: true }); // Executed only once
+    window.removeEventListener('click', enableAutoplayOnFirstInteraction);
+    window.removeEventListener('keydown', enableAutoplayOnFirstInteraction);
+};
+
+window.addEventListener('click', enableAutoplayOnFirstInteraction);
+window.addEventListener('keydown', enableAutoplayOnFirstInteraction);
 });
