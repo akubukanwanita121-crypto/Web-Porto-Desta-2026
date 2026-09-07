@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio | Dark Luxury</title>
+    
+    <!-- Google Fonts: Syne (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Texture -->
+    <div class="bg-mesh"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="brand-logo">C<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content reveal">
+            <div class="availability-badge">
+                <span class="dot"></span> Available for Freelance & Projects
+            </div>
+            <h1 class="hero-title">Shaping <span class="gradient-text">Visuals</span><br>Into Reality.</h1>
+            <p class="hero-subtitle">Crafting immersive digital experiences through 3D animation, motion graphics, and bold brand identities.</p>
+            <a href="#work" class="cta-btn custom-hover">
+                Explore Works 
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="portfolio">
+        <div class="section-header reveal">
+            <h2>Selected Works</h2>
+            <div class="filter-nav">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="brand">Brand Identity</button>
+                <button class="filter-btn" data-filter="illustration">Illustration</button>
+                <button class="filter-btn" data-filter="motion">3D & Motion</button>
+            </div>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- Card 1 -->
+            <div class="portfolio-card reveal custom-hover" data-category="brand" 
+                 data-title="Dorean Clothing Line" 
+                 data-desc="Brand identity exploring the concept of 'freedom with limits'. Featuring a non-standard urban communication strategy and custom typography for the upcoming launch."
+                 data-type="image" data-src="https://images.unsplash.com/photo-1558222218-b7b54eede3f3?q=80&w=800&auto=format&fit=crop">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1558222218-b7b54eede3f3?q=80&w=800&auto=format&fit=crop" alt="Dorean">
+                    <div class="card-overlay">
+                        <h3>Dorean Clothing Line</h3>
+                        <p>Brand Identity</p>
+                        <div class="tags"><span>Illustrator</span><span>Strategy</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="portfolio-card reveal custom-hover" data-category="illustration"
+                 data-title="Cyberpunk Pinocchio" 
+                 data-desc="Reimagining a classic tale through an isekai lens. Designed 6 distinct character skins optimized for modern digital landscapes."
+                 data-type="image" data-src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=800&auto=format&fit=crop">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=800&auto=format&fit=crop" alt="Cyberpunk Pinocchio">
+                    <div class="card-overlay">
+                        <h3>Cyberpunk Pinocchio</h3>
+                        <p>Illustration</p>
+                        <div class="tags"><span>Photoshop</span><span>Concept Art</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="portfolio-card reveal custom-hover" data-category="motion"
+                 data-title="Run and Dodge" 
+                 data-desc="A technical study in character animation demonstrating the blocking-spline-polish workflow. Emphasizing weight and dynamic pose-to-pose principles."
+                 data-type="video" data-src="https://cdn.coverr.co/videos/coverr-a-man-running-in-the-forest-5152/1080p.mp4">
+                <div class="card-inner">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://cdn.coverr.co/videos/coverr-a-man-running-in-the-forest-5152/1080p.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-overlay">
+                        <h3>Run and Dodge</h3>
+                        <p>3D & Motion</p>
+                        <div class="tags"><span>Blender</span><span>Animation</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="portfolio-card reveal custom-hover" data-category="motion"
+                 data-title="Showreel 2026" 
+                 data-desc="A dynamic compilation of my best motion graphics and 3D animation work, edited to the timeless rhythm of mid-century classics."
+                 data-type="video" data-src="https://cdn.coverr.co/videos/coverr-3d-abstract-shapes-4886/1080p.mp4">
+                <div class="card-inner">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://cdn.coverr.co/videos/coverr-3d-abstract-shapes-4886/1080p.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-overlay">
+                        <h3>Showreel 2026</h3>
+                        <p>Motion Graphics</p>
+                        <div class="tags"><span>After Effects</span><span>Premiere</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Lightbox -->
+    <div class="modal" id="projectModal">
+        <div class="modal-bg"></div>
+        <button class="close-modal custom-hover">&times;</button>
+        <div class="modal-content">
+            <div class="modal-media" id="modalMedia"></div>
+            <div class="modal-info">
+                <h2 id="modalTitle">Project Title</h2>
+                <p id="modalDesc">Project description goes here.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About & Skills Section -->
+    <section id="about" class="about">
+        <div class="about-container reveal">
+            <div class="about-visual">
+                <div class="abstract-shape"></div>
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I am a creative front-end engineer and designer merging technical precision with artistic vision. Whether I'm crafting character-driven stories, collaborating with peers to polish 3D workflows, or designing layouts, my goal is to create impactful digital art.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-badge custom-hover">Motion Design</div>
+                    <div class="skill-badge custom-hover">3D Modeling</div>
+                    <div class="skill-badge custom-hover">Brand Strategy</div>
+                    <div class="skill-badge custom-hover">Layouting</div>
+                    <div class="skill-badge custom-hover">Pose-to-Pose Animation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content reveal">
+            <h2 class="collab-text">Let's create something<br><span class="gradient-text">extraordinary.</span></h2>
+            
+            <div class="social-links">
+                <a href="#" class="custom-hover">Instagram</a>
+                <a href="#" class="custom-hover">Behance</a>
+                <a href="#" class="custom-hover">LinkedIn</a>
+                <a href="#" class="custom-hover">GitHub</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Creative Portfolio.</p>
+                <div class="live-clock" id="liveClock">00:00:00</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
