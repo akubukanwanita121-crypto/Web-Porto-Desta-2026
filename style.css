@@ -231,6 +231,27 @@ footer { min-height: auto; padding: 80px 8% 40px; text-align: center; }
 .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
+/* Sound Toggle Button */
+.sound-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.sound-btn.playing {
+    border-color: var(--accent-solid);
+    color: var(--accent-solid);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
     .hero-title { font-size: 3.5rem; }

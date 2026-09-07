@@ -24,6 +24,16 @@
     <nav class="navbar">
         <div class="nav-content">
             <a href="#" class="brand-logo">C<span>.</span></a>
+            <div class="nav-controls">
+    <button id="soundToggle" class="sound-btn custom-hover" aria-label="Toggle Sound">
+        <span class="sound-icon">🎵</span> <span class="sound-text">Sound OFF</span>
+    </button>
+</div>
+
+<!-- Audio Tag (Gunakan path folder lokal) -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="audio/bgm.mp3" type="audio/mpeg">
+</audio>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#work">Work</a></li>

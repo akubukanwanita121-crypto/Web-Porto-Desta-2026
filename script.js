@@ -153,4 +153,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const date = new Date();
         clockElement.textContent = date.toLocaleTimeString('en-US', { hour12: false });
     }, 1000);
+
+    // --- Audio Background Logic ---
+const bgMusic = document.getElementById('bgMusic');
+const soundToggle = document.getElementById('soundToggle');
+const soundText = soundToggle.querySelector('.sound-text');
+let isPlaying = false;
+
+function toggleAudio() {
+    if (isPlaying) {
+        bgMusic.pause();
+        soundText.textContent = 'Sound OFF';
+        soundToggle.classList.remove('playing');
+        isPlaying = false;
+    } else {
+        bgMusic.play().then(() => {
+            soundText.textContent = 'Sound ON';
+            soundToggle.classList.add('playing');
+            isPlaying = true;
+        }).catch(err => console.log("Autoplay blocked:", err));
+    }
+}
+
+// Klik tombol sound toggle
+soundToggle.addEventListener('click', toggleAudio);
+
+// Trik Awwwards: Putar otomatis saat pengguna pertama kali mengklik apa saja di layar
+window.addEventListener('click', () => {
+    if (!isPlaying) {
+        toggleAudio();
+    }
+}, { once: true }); // Executed only once
 });
